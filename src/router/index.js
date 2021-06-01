@@ -11,13 +11,14 @@ import {
   QA,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {ButtonNavigator} from '../components';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <ButtonNavigator {...props} />}>
       <Tab.Screen name="Ustadz" component={Ustadz} />
       <Tab.Screen name="Messages" component={Messages} />
       <Tab.Screen name="QA" component={QA} />
@@ -27,7 +28,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash">
+    <Stack.Navigator initialRouteName="MainApp">
       <Stack.Screen
         name="Splash"
         component={Splash}

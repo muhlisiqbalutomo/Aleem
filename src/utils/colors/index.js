@@ -3,6 +3,7 @@ const mainColors = {
   semiPurple: '#6776ED',
   gray: '#7D8797',
   gray2: '#E9E9E9',
+  bottom: '#112340',
 };
 
 export const colors = {
@@ -11,9 +12,12 @@ export const colors = {
   black: 'black',
   white: 'white',
   gray: mainColors.gray,
+  bottom: mainColors.bottom,
   text: {
     primary: 'black',
     secondary: mainColors.gray,
+    menuInactive: mainColors.gray,
+    menuActive: mainColors.semiPurple,
   },
   button: {
     primary: {
