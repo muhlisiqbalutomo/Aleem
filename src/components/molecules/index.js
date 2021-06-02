@@ -4,6 +4,7 @@ import HomeProfile from './HomeProfile';
 import BabKonsultasi from './BabKonsultasi';
 import RatedUstadz from './RatedUstadz';
 import NewsItem from './NewsItem';
+import ListUstadz from './ListUstadz';
 
 export {
   Header,
@@ -12,4 +13,5 @@ export {
   BabKonsultasi,
   RatedUstadz,
   NewsItem,
+  ListUstadz,
 };
