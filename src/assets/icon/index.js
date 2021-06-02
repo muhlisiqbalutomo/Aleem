@@ -7,6 +7,7 @@ import IconMessages from './messages.svg';
 import IconMessagesActive from './messages-active.svg';
 import IconQA from './qa.svg';
 import IconQAActive from './qa-active.svg';
+import IconStar from './star.svg';
 
 export {
   IconBackDark,
@@ -18,4 +19,5 @@ export {
   IconMessagesActive,
   IconQA,
   IconQAActive,
+  IconStar,
 };

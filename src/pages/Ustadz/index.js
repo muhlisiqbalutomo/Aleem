@@ -8,33 +8,35 @@ import {colors, fonts} from '../../utils';
 const Ustadz = () => {
   return (
     <View style={styles.page}>
-      <View style={styles.content}>
-        <HomeProfile />
-        <Text style={styles.welcome}>
-          Assalamualaikum, {'\n'}konsultasi apa hari ini?
-        </Text>
-        <View style={styles.wrapperScroll}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <View style={styles.konsultasi}>
-              <Gap width={16} />
-              <BabKonsultasi />
-              <BabKonsultasi />
-              <BabKonsultasi />
-              <BabKonsultasi />
-              <BabKonsultasi />
-              <Gap width={6} />
-            </View>
-          </ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.content}>
+          <HomeProfile />
+          <Text style={styles.welcome}>
+            Assalamualaikum, {'\n'}konsultasi apa hari ini?
+          </Text>
+          <View style={styles.wrapperScroll}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              <View style={styles.konsultasi}>
+                <Gap width={16} />
+                <BabKonsultasi />
+                <BabKonsultasi />
+                <BabKonsultasi />
+                <BabKonsultasi />
+                <BabKonsultasi />
+                <Gap width={6} />
+              </View>
+            </ScrollView>
+          </View>
+          <Text style={styles.sectionLabel}>Top Rated Ustadz</Text>
+          <RatedUstadz />
+          <RatedUstadz />
+          <RatedUstadz />
+          <Text style={styles.sectionLabel}>Good News</Text>
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
         </View>
-        <Text style={styles.sectionLabel}>Top Rated Ustadz</Text>
-        <RatedUstadz />
-        <RatedUstadz />
-        <RatedUstadz />
-        <Text style={styles.sectionLabel}>Good News</Text>
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
-      </View>
+      </ScrollView>
     </View>
   );
 };
