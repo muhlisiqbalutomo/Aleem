@@ -1,17 +1,14 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import {DummyUstadz1} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-const ListUstadz = () => {
+const ListUstadz = ({profile, name, desc, readChat}) => {
   return (
     <View style={styles.container}>
-      <Image source={DummyUstadz1} style={styles.avatar} />
+      <Image source={profile} style={styles.avatar} />
       <View>
-        <Text style={styles.name}>Ameer Thalib</Text>
-        <Text style={styles.lastChat}>
-          Baik pak ustadz, terima kasih banyak atas wakt...
-        </Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.lastChat(readChat)}>{desc}</Text>
       </View>
     </View>
   );
@@ -38,9 +35,9 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary[600],
     color: colors.text.primary,
   },
-  lastChat: {
+  lastChat: readChat => ({
     fontSize: 12,
-    fontFamily: fonts.primary.normal,
-    color: colors.text.secondary,
-  },
+    fontFamily: readChat ? fonts.primary[700] : fonts.primary.normal,
+    color: readChat ? colors.text.primary : colors.text.secondary,
+  }),
 });
