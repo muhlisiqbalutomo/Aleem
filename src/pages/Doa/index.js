@@ -1,14 +1,54 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {ILBGDoa} from '../../assets/illustration';
+import {ListDoa} from '../../components';
+import {colors, fonts} from '../../utils';
 
 const Doa = () => {
   return (
-    <View>
-      <Text>Doa Page</Text>
+    <View style={styles.page}>
+      <ImageBackground source={ILBGDoa} style={styles.background}>
+        <Text style={styles.title}>Do'a Harian</Text>
+        <Text style={styles.desc}>Sudahkah berdoa hari ini?</Text>
+      </ImageBackground>
+      <View style={styles.content}>
+        <ListDoa />
+        <ListDoa />
+        <ListDoa />
+      </View>
     </View>
   );
 };
 
 export default Doa;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  content: {
+    backgroundColor: colors.white,
+    borderRadius: 20,
+    flex: 1,
+    marginTop: -30,
+    paddingTop: 14,
+  },
+  page: {
+    backgroundColor: colors.bottom,
+    flex: 1,
+  },
+  background: {
+    height: 240,
+    paddingTop: 80,
+  },
+  title: {
+    fontSize: 30,
+    fontFamily: fonts.primary[900],
+    color: colors.white,
+    textAlign: 'center',
+  },
+  desc: {
+    fontSize: 12,
+    fontFamily: fonts.primary[700],
+    color: colors.bottom,
+    textAlign: 'center',
+    marginTop: 6,
+  },
+});

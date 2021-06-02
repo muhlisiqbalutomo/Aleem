@@ -22,8 +22,10 @@ export default NewsItem;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderBottomColor: colors.border,
+    // borderBottomWidth: 1,
+    // borderBottomColor: colors.border,
+    borderBottomWidth: 0.5,
+    borderBottomColor: colors.bottom,
     paddingBottom: 12,
     paddingTop: 16,
     paddingHorizontal: 16,
