@@ -4,6 +4,7 @@ import {Gap} from '../../components/atoms';
 import {BabKonsultasi, NewsItem, RatedUstadz} from '../../components/molecules';
 import HomeProfile from '../../components/molecules/HomeProfile';
 import {colors, fonts} from '../../utils';
+import {JSONTopikKonsultasi} from '../../assets';
 
 const Ustadz = () => {
   return (
@@ -21,11 +22,15 @@ const Ustadz = () => {
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View style={styles.konsultasi}>
                 <Gap width={32} />
-                <BabKonsultasi />
-                <BabKonsultasi />
-                <BabKonsultasi />
-                <BabKonsultasi />
-                <BabKonsultasi />
+                {JSONTopikKonsultasi.data.map(item => {
+                  return (
+                    <BabKonsultasi
+                      key={item.id}
+                      topic={item.topic}
+                      color={colors.fiqih}
+                    />
+                  );
+                })}
                 <Gap width={22} />
               </View>
             </ScrollView>

@@ -1,0 +1,29 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "topic": "AKIDAH",
+            "color": null
+        },
+        {
+            "id": 2,
+            "topic": "TAFSIR",
+            "color": null
+        },
+        {
+            "id": 3,
+            "topic": "HADITS",
+            "color": null
+        },
+        {
+            "id": 4,
+            "topic": "FIQIH",
+            "color": null
+        },
+        {
+            "id": 5,
+            "topic": "SEJARAH ISLAM",
+            "color": null
+        }
+    ]
+}

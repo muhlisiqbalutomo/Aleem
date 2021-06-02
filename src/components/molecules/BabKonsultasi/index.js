@@ -1,13 +1,40 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {ILBabAkidah} from '../../../assets';
+import {
+  ILBabAkidah,
+  ILBabFiqih,
+  ILBabHadits,
+  ILBabSejarahIslam,
+  ILBabTafsir,
+} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-const BabKonsultasi = () => {
+const BabKonsultasi = ({topic, color}) => {
+  const Icon = () => {
+    switch (topic) {
+      case 'AKIDAH':
+        return <ILBabAkidah style={styles.illustration} />;
+
+      case 'TAFSIR':
+        return <ILBabTafsir style={styles.illustration} />;
+
+      case 'HADITS':
+        return <ILBabHadits style={styles.illustration} />;
+
+      case 'FIQIH':
+        return <ILBabFiqih style={styles.illustration} />;
+
+      case 'SEJARAH ISLAM':
+        return <ILBabSejarahIslam style={styles.illustration} />;
+
+      default:
+        break;
+    }
+  };
   return (
-    <View style={styles.container}>
-      <ILBabAkidah style={styles.illustration} />
-      <Text style={styles.label}>Akidah</Text>
+    <View style={styles.container(color)}>
+      <Icon />
+      <Text style={styles.label}>{topic}</Text>
     </View>
   );
 };
@@ -15,17 +42,17 @@ const BabKonsultasi = () => {
 export default BabKonsultasi;
 
 const styles = StyleSheet.create({
-  container: {
+  container: color => ({
     padding: 12,
-    backgroundColor: colors.secondary,
-    // alignSelf: 'flex-start',
+    backgroundColor: color,
+    // alignSelf: 'flex-start'
     width: 170,
     height: 130,
     borderRadius: 10,
     marginRight: 10,
     flexDirection: 'row',
     alignItems: 'center',
-  },
+  }),
   illustration: {
     marginRight: 10,
   },
@@ -34,5 +61,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary[800],
     color: colors.white,
     textAlign: 'center',
+    maxWidth: '60%',
   },
 });

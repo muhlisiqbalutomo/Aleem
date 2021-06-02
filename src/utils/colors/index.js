@@ -4,6 +4,12 @@ const mainColors = {
   gray: '#7D8797',
   gray2: '#E9E9E9',
   bottom: '#112340',
+  // color bab konsultasi
+  akidah: '#1ABC9C',
+  tafsir: '#8E44AD',
+  hadits: '#F1C40F',
+  fiqih: '#3498DB',
+  sejarahIslam: '#E74C3C',
 };
 
 export const colors = {
@@ -13,6 +19,12 @@ export const colors = {
   white: 'white',
   gray: mainColors.gray,
   bottom: mainColors.bottom,
+  // get color bab konsultasi
+  akidah: mainColors.akidah,
+  tafsir: mainColors.tafsir,
+  hadits: mainColors.hadits,
+  fiqih: mainColors.fiqih,
+  sejarahIslam: mainColors.sejarahIslam,
   text: {
     primary: 'black',
     secondary: mainColors.gray,
