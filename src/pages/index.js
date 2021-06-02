@@ -5,6 +5,15 @@ import Login from './Login';
 import UploadPhoto from './UploadPhoto';
 import Ustadz from './Ustadz';
 import Messages from './Messages';
-import QA from './QA';
+import Doa from './Doa';
 
-export {Splash, GetStarted, Register, Login, UploadPhoto, Ustadz, Messages, QA};
+export {
+  Splash,
+  GetStarted,
+  Register,
+  Login,
+  UploadPhoto,
+  Ustadz,
+  Messages,
+  Doa,
+};

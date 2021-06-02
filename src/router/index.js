@@ -8,7 +8,7 @@ import {
   UploadPhoto,
   Ustadz,
   Messages,
-  QA,
+  Doa,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ButtonNavigator} from '../components';
@@ -21,7 +21,7 @@ const MainApp = () => {
     <Tab.Navigator tabBar={props => <ButtonNavigator {...props} />}>
       <Tab.Screen name="Ustadz" component={Ustadz} />
       <Tab.Screen name="Messages" component={Messages} />
-      <Tab.Screen name="QA" component={QA} />
+      <Tab.Screen name="Do'a Harian" component={Doa} />
     </Tab.Navigator>
   );
 };

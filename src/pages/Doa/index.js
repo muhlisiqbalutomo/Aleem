@@ -1,14 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const QA = () => {
+const Doa = () => {
   return (
     <View>
-      <Text>QA Page</Text>
+      <Text>Doa Page</Text>
     </View>
   );
 };
 
-export default QA;
+export default Doa;
 
 const styles = StyleSheet.create({});

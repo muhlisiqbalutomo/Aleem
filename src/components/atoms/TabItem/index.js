@@ -3,8 +3,8 @@ import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {
   IconMessages,
   IconMessagesActive,
-  IconQA,
-  IconQAActive,
+  IconDoa,
+  IconDoaActive,
   IconUstadz,
   IconUstadzActive,
 } from '../../../assets';
@@ -18,8 +18,8 @@ const TabItem = ({title, active, onPress, onLongPress}) => {
     if (title === 'Messages') {
       return active ? <IconMessagesActive /> : <IconMessages />;
     }
-    if (title === 'QA') {
-      return active ? <IconQAActive /> : <IconQA />;
+    if (title === "Do'a Harian") {
+      return active ? <IconDoaActive /> : <IconDoa />;
     }
     return <IconUstadz />;
   };

@@ -5,8 +5,8 @@ import IconUstadz from './ustadz.svg';
 import IconUstadzActive from './ustadz-active.svg';
 import IconMessages from './messages.svg';
 import IconMessagesActive from './messages-active.svg';
-import IconQA from './qa.svg';
-import IconQAActive from './qa-active.svg';
+import IconDoa from './doa.svg';
+import IconDoaActive from './doa-active.svg';
 import IconStar from './star.svg';
 
 export {
@@ -17,7 +17,7 @@ export {
   IconUstadzActive,
   IconMessages,
   IconMessagesActive,
-  IconQA,
-  IconQAActive,
+  IconDoa,
+  IconDoaActive,
   IconStar,
 };
