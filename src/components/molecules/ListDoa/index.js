@@ -1,15 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {ILDoaBangunTidur} from '../../../assets';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {colors, fonts} from '../../../utils';
 
-const ListDoa = () => {
+const ListDoa = ({title, description, pic}) => {
   return (
     <View style={styles.container}>
-      <ILDoaBangunTidur />
+      <Image source={pic} style={styles.img} />
       <View style={styles.wrapperText}>
-        <Text style={styles.title}>Do'a Bangun Tidur (1)</Text>
-        <Text style={styles.desc}>Muslim: 4/2083</Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.desc}>{description}</Text>
       </View>
     </View>
   );
@@ -26,6 +25,10 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.bottom,
     padding: 16,
   },
+  img: {
+    height: 78,
+    width: 90,
+  },
   wrapperText: {
     alignItems: 'center',
     flex: 1,
@@ -33,6 +36,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontFamily: fonts.primary[800],
+    textAlign: 'center',
   },
   desc: {
     fontSize: 12,

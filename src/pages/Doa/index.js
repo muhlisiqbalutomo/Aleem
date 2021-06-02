@@ -1,6 +1,11 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, Text, View} from 'react-native';
-import {ILBGDoa} from '../../assets/illustration';
+import {
+  ILBGDoa,
+  ILDoaBangunTidur,
+  ILDoaPakaian,
+  ILDoaToilet,
+} from '../../assets/illustration';
 import {ListDoa} from '../../components';
 import {colors, fonts} from '../../utils';
 
@@ -12,9 +17,21 @@ const Doa = () => {
         <Text style={styles.desc}>Sudahkah berdoa hari ini?</Text>
       </ImageBackground>
       <View style={styles.content}>
-        <ListDoa />
-        <ListDoa />
-        <ListDoa />
+        <ListDoa
+          title="Do'a Bangun Tidur (3)"
+          description="Shahih Tirmidzi: 3/144"
+          pic={ILDoaBangunTidur}
+        />
+        <ListDoa
+          title="Mendoakan Orang yang Mengenakan Pakaian Baru (1)"
+          description="Muslim: 4/2083"
+          pic={ILDoaPakaian}
+        />
+        <ListDoa
+          title="Doa Masuk Toilet"
+          description="Fathul Baari: 1/244"
+          pic={ILDoaToilet}
+        />
       </View>
     </View>
   );

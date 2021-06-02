@@ -7,11 +7,11 @@ import ILBabTafsir from './tafsir.svg';
 import ILBabHadits from './hadits.svg';
 import ILBabFiqih from './fiqih.svg';
 import ILBabSejarahIslam from './sejarah-islam.svg';
-import ILDoaBangunTidur from './doa-bangun-tidur.svg';
-import ILDoaPakaian from './doa-pakaian.svg';
-import ILDoaToilet from './doa-toilet.svg';
-import ILDoaWudhu from './doa-wudhu.svg';
-import ILDOaRumah from './doa-rumah.svg';
+import ILDoaBangunTidur from './doa-bangun-tidur.png';
+import ILDoaPakaian from './doa-pakaian.png';
+import ILDoaToilet from './doa-toilet.png';
+import ILDoaWudhu from './doa-wudhu.png';
+import ILDOaRumah from './doa-rumah.png';
 import ILBGDoa from './bg-doa.png';
 
 export {
