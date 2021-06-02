@@ -10,28 +10,32 @@ const Ustadz = () => {
     <View style={styles.page}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
-          <HomeProfile />
-          <Text style={styles.welcome}>
-            Assalamualaikum, {'\n'}konsultasi apa hari ini?
-          </Text>
+          <View style={styles.wrapperSection}>
+            <HomeProfile />
+            <Text style={styles.welcome}>
+              Assalamualaikum, {'\n'}konsultasi apa hari ini?
+            </Text>
+          </View>
           <View style={styles.wrapperScroll}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View style={styles.konsultasi}>
-                <Gap width={16} />
+                <Gap width={32} />
                 <BabKonsultasi />
                 <BabKonsultasi />
                 <BabKonsultasi />
                 <BabKonsultasi />
                 <BabKonsultasi />
-                <Gap width={6} />
+                <Gap width={22} />
               </View>
             </ScrollView>
           </View>
-          <Text style={styles.sectionLabel}>Top Rated Ustadz</Text>
-          <RatedUstadz />
-          <RatedUstadz />
-          <RatedUstadz />
-          <Text style={styles.sectionLabel}>Good News</Text>
+          <View style={styles.wrapperSection}>
+            <Text style={styles.sectionLabel}>Top Rated Ustadz</Text>
+            <RatedUstadz />
+            <RatedUstadz />
+            <RatedUstadz />
+            <Text style={styles.sectionLabel}>Good News</Text>
+          </View>
           <NewsItem />
           <NewsItem />
           <NewsItem />
@@ -52,7 +56,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     flex: 1,
     paddingVertical: 30,
-    paddingHorizontal: 16,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
@@ -68,6 +71,9 @@ const styles = StyleSheet.create({
   },
   konsultasi: {
     flexDirection: 'row',
+  },
+  wrapperSection: {
+    paddingHorizontal: 16,
   },
   sectionLabel: {
     fontSize: 16,
