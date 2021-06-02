@@ -54,7 +54,11 @@ const Router = () => {
         component={UploadPhoto}
         options={{headerShown: false}}
       />
-      <Stack.Screen name="MainApp" component={MainApp} />
+      <Stack.Screen
+        name="MainApp"
+        component={MainApp}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };
