@@ -8,8 +8,9 @@ import {colors, fonts} from '../../utils';
 const Ustadz = () => {
   return (
     <View style={styles.page}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.content}>
+      <View style={styles.content}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Gap height={30} />
           <View style={styles.wrapperSection}>
             <HomeProfile />
             <Text style={styles.welcome}>
@@ -39,8 +40,9 @@ const Ustadz = () => {
           <NewsItem />
           <NewsItem />
           <NewsItem />
-        </View>
-      </ScrollView>
+          <Gap height={30} />
+        </ScrollView>
+      </View>
     </View>
   );
 };
@@ -55,7 +57,6 @@ const styles = StyleSheet.create({
   content: {
     backgroundColor: colors.white,
     flex: 1,
-    paddingVertical: 30,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
