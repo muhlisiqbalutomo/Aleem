@@ -1,6 +1,7 @@
 const mainColors = {
   green: '#008037',
   semiPurple: '#6776ED',
+  semiPurple2: '#B0B6EA',
   gray: '#7D8797',
   gray2: '#E9E9E9',
   gray3: '#EDEEF0',
@@ -16,6 +17,7 @@ const mainColors = {
 export const colors = {
   primary: mainColors.green,
   secondary: mainColors.semiPurple,
+  bubbleUser: mainColors.semiPurple2,
   black: 'black',
   white: 'white',
   gray: mainColors.gray,
