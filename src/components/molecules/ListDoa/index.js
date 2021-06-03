@@ -1,16 +1,15 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {colors, fonts} from '../../../utils';
 
-const ListDoa = ({title, description, pic}) => {
+const ListDoa = ({title, pic, onPress}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={pic} style={styles.img} />
       <View style={styles.wrapperText}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.desc}>{description}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -35,12 +34,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    fontFamily: fonts.primary[800],
+    fontFamily: fonts.primary[900],
+    color: colors.bottom,
     textAlign: 'center',
-  },
-  desc: {
-    fontSize: 12,
-    fontFamily: fonts.primary.normal,
-    color: colors.text.secondary,
   },
 });

@@ -9,6 +9,7 @@ import Doa from './Doa';
 import PilihUstadz from './PilihUstadz';
 import Chatting from './Chatting';
 import UserProfile from './UserProfile';
+import DetailDoa from './DetailDoa';
 
 export {
   Splash,
@@ -22,4 +23,5 @@ export {
   PilihUstadz,
   Chatting,
   UserProfile,
+  DetailDoa,
 };

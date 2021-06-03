@@ -1,15 +1,31 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import {JSONDoaHarian} from '../../assets';
 import {
   ILBGDoa,
   ILDoaBangunTidur,
   ILDoaPakaian,
+  ILDOaRumah,
   ILDoaToilet,
+  ILDoaWudhu,
 } from '../../assets/illustration';
 import {ListDoa} from '../../components';
 import {colors, fonts} from '../../utils';
 
-const Doa = () => {
+const Doa = ({navigation}) => {
+  const picDoa = [
+    ILDoaBangunTidur,
+    ILDoaPakaian,
+    ILDoaToilet,
+    ILDoaWudhu,
+    ILDOaRumah,
+  ];
   return (
     <View style={styles.page}>
       <ImageBackground source={ILBGDoa} style={styles.background}>
@@ -17,21 +33,26 @@ const Doa = () => {
         <Text style={styles.desc}>Sudahkah berdoa hari ini?</Text>
       </ImageBackground>
       <View style={styles.content}>
-        <ListDoa
-          title="Do'a Bangun Tidur (3)"
-          description="Shahih Tirmidzi: 3/144"
-          pic={ILDoaBangunTidur}
-        />
-        <ListDoa
-          title="Mendoakan Orang yang Mengenakan Pakaian Baru (1)"
-          description="Muslim: 4/2083"
-          pic={ILDoaPakaian}
-        />
-        <ListDoa
-          title="Doa Masuk Toilet"
-          description="Fathul Baari: 1/244"
-          pic={ILDoaToilet}
-        />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {JSONDoaHarian.data.map(item => {
+            return (
+              <ListDoa
+                key={item.id}
+                title={item.judul}
+                pic={picDoa[item.idIcon]}
+                onPress={() =>
+                  navigation.navigate('DetailDoa', {
+                    judul: item.judul,
+                    arab: item.arab,
+                    latin: item.latin,
+                    arti: item.arti,
+                    footnote: item.footnote,
+                  })
+                }
+              />
+            );
+          })}
+        </ScrollView>
       </View>
     </View>
   );
@@ -45,7 +66,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     flex: 1,
     marginTop: -30,
-    paddingTop: 14,
+    paddingTop: 0,
+    paddingBottom: 0,
   },
   page: {
     backgroundColor: colors.bottom,
