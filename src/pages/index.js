@@ -6,6 +6,7 @@ import UploadPhoto from './UploadPhoto';
 import Ustadz from './Ustadz';
 import Messages from './Messages';
 import Doa from './Doa';
+import PilihUstadz from './PilihUstadz';
 
 export {
   Splash,
@@ -16,4 +17,5 @@ export {
   Ustadz,
   Messages,
   Doa,
+  PilihUstadz,
 };

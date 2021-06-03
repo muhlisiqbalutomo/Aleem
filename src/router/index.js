@@ -9,6 +9,7 @@ import {
   Ustadz,
   Messages,
   Doa,
+  PilihUstadz,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ButtonNavigator} from '../components';
@@ -57,6 +58,11 @@ const Router = () => {
       <Stack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PilihUstadz"
+        component={PilihUstadz}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

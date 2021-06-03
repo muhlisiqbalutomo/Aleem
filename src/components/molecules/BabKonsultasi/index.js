@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {
   ILBabAkidah,
   ILBabFiqih,
@@ -9,7 +9,7 @@ import {
 } from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-const BabKonsultasi = ({topic, color}) => {
+const BabKonsultasi = ({topic, color, onPress}) => {
   const Icon = () => {
     switch (topic) {
       case 'AKIDAH':
@@ -32,10 +32,10 @@ const BabKonsultasi = ({topic, color}) => {
     }
   };
   return (
-    <View style={styles.container(color)}>
+    <TouchableOpacity style={styles.container(color)} onPress={onPress}>
       <Icon />
       <Text style={styles.label}>{topic}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

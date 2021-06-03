@@ -6,7 +6,7 @@ import HomeProfile from '../../components/molecules/HomeProfile';
 import {colors, fonts} from '../../utils';
 import {JSONTopikKonsultasi} from '../../assets';
 
-const Ustadz = () => {
+const Ustadz = ({navigation}) => {
   return (
     <View style={styles.page}>
       <View style={styles.content}>
@@ -27,7 +27,8 @@ const Ustadz = () => {
                     <BabKonsultasi
                       key={item.id}
                       topic={item.topic}
-                      color={colors.fiqih}
+                      color={colors.fiqih} //warning: coba pake cara inline atau state agar color bisa sesuai
+                      onPress={() => navigation.navigate('PilihUstadz')}
                     />
                   );
                 })}
