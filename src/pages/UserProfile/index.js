@@ -4,17 +4,18 @@ import {DummyUser, DummyUstadz3} from '../../assets';
 import {Gap, Header, List, Profile} from '../../components';
 import {colors} from '../../utils';
 
-const UserProfile = () => {
+const UserProfile = ({navigation}) => {
   return (
     <View style={styles.page}>
       <Header title="Profile" />
       <Gap height={30} />
-      <Profile />
+      <Profile name="Muhlis Iqbal Utomo" desc="CEO & Founder at iqbalworks" />
       <List
         name="Edit Profile"
         desc="Last Update Yesterday"
         type="next"
         icon="edit-profile"
+        onPress={() => navigation.navigate('UpdateProfile')}
       />
       <List
         name="Edit Profile"
