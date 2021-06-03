@@ -12,6 +12,13 @@ import {
 } from '../../assets';
 
 const Ustadz = ({navigation}) => {
+  const bgKonsulColor = [
+    colors.akidah,
+    colors.tafsir,
+    colors.hadits,
+    colors.fiqih,
+    colors.sejarahIslam,
+  ];
   return (
     <View style={styles.page}>
       <View style={styles.content}>
@@ -32,7 +39,7 @@ const Ustadz = ({navigation}) => {
                     <BabKonsultasi
                       key={item.id}
                       topic={item.topic}
-                      color={colors.fiqih} //warning: coba pake cara inline atau state agar color bisa sesuai
+                      color={bgKonsulColor[item.id + -1]} //nice improve
                       onPress={() => navigation.navigate('PilihUstadz')}
                     />
                   );

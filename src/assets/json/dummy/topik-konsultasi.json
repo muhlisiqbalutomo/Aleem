@@ -2,28 +2,23 @@
     "data": [
         {
             "id": 1,
-            "topic": "AKIDAH",
-            "color": null
+            "topic": "AKIDAH"
         },
         {
             "id": 2,
-            "topic": "TAFSIR",
-            "color": null
+            "topic": "TAFSIR"
         },
         {
             "id": 3,
-            "topic": "HADITS",
-            "color": null
+            "topic": "HADITS"
         },
         {
             "id": 4,
-            "topic": "FIQIH",
-            "color": null
+            "topic": "FIQIH"
         },
         {
             "id": 5,
-            "topic": "SEJARAH ISLAM",
-            "color": null
+            "topic": "SEJARAH ISLAM"
         }
     ]
 }
