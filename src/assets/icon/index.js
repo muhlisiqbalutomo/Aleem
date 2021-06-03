@@ -10,6 +10,8 @@ import IconDoa from './doa.svg';
 import IconDoaActive from './doa-active.svg';
 import IconStar from './star.svg';
 import IconNext from './next.svg';
+import IconSendLight from './send-light.svg';
+import IconSendDark from './send-dark.svg';
 
 export {
   IconBackDark,
@@ -24,4 +26,6 @@ export {
   IconDoaActive,
   IconStar,
   IconNext,
+  IconSendLight,
+  IconSendDark,
 };

@@ -3,6 +3,7 @@ const mainColors = {
   semiPurple: '#6776ED',
   gray: '#7D8797',
   gray2: '#E9E9E9',
+  gray3: '#EDEEF0',
   bottom: '#112340',
   // color bab konsultasi
   akidah: '#1ABC9C',
@@ -18,6 +19,7 @@ export const colors = {
   black: 'black',
   white: 'white',
   gray: mainColors.gray,
+  disable: mainColors.gray3,
   bottom: mainColors.bottom,
   // get color bab konsultasi
   akidah: mainColors.akidah,

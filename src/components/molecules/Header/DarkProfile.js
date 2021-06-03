@@ -35,12 +35,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   name: {
-    fontFamily: fonts.primary[600],
+    fontFamily: fonts.primary.normal,
     fontSize: 20,
     color: colors.white,
   },
   desc: {
-    fontFamily: fonts.secondary.normal,
+    fontFamily: fonts.primary.normal,
     fontSize: 14,
     marginTop: 6,
     color: colors.text.secondary,
