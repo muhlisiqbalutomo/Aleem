@@ -4,7 +4,12 @@ import {Gap} from '../../components/atoms';
 import {BabKonsultasi, NewsItem, RatedUstadz} from '../../components/molecules';
 import HomeProfile from '../../components/molecules/HomeProfile';
 import {colors, fonts} from '../../utils';
-import {JSONTopikKonsultasi} from '../../assets';
+import {
+  DummyUstadz1,
+  DummyUstadz2,
+  DummyUstadz3,
+  JSONTopikKonsultasi,
+} from '../../assets';
 
 const Ustadz = ({navigation}) => {
   return (
@@ -38,9 +43,24 @@ const Ustadz = ({navigation}) => {
           </View>
           <View style={styles.wrapperSection}>
             <Text style={styles.sectionLabel}>Top Rated Ustadz</Text>
-            <RatedUstadz />
-            <RatedUstadz />
-            <RatedUstadz />
+            <RatedUstadz
+              name="Ameer Thalib"
+              topic="Fiqih"
+              avatar={DummyUstadz1}
+              onPress={() => navigation.navigate('UstadzProfile')}
+            />
+            <RatedUstadz
+              name="Fatih Rizal"
+              topic="Sejarah Islam"
+              avatar={DummyUstadz2}
+              onPress={() => navigation.navigate('UstadzProfile')}
+            />
+            <RatedUstadz
+              name="Zabit Bahar"
+              topic="Hadits"
+              avatar={DummyUstadz3}
+              onPress={() => navigation.navigate('UstadzProfile')}
+            />
             <Text style={styles.sectionLabel}>Good News</Text>
           </View>
           <NewsItem />

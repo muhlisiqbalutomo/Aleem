@@ -16,6 +16,7 @@ import {
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ButtonNavigator} from '../components';
 import UpdateProfile from '../pages/UpdateProfile';
+import UstadzProfile from '../pages/UstadzProfile';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -81,6 +82,11 @@ const Router = () => {
       <Stack.Screen
         name="UpdateProfile"
         component={UpdateProfile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="UstadzProfile"
+        component={UstadzProfile}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

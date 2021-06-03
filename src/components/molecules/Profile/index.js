@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   borderProfile: {
-    borderWidth: 1,
+    borderWidth: 0.2,
     width: 130,
     height: 130,
     borderRadius: 130 / 2,

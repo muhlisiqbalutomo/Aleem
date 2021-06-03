@@ -1,15 +1,15 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
-import {DummyUstadz1, IconStar} from '../../../assets';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {IconStar} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-const RatedUstadz = () => {
+const RatedUstadz = ({name, topic, avatar, onPress}) => {
   return (
-    <View style={styles.container}>
-      <Image source={DummyUstadz1} style={styles.avatar} />
+    <TouchableOpacity style={styles.container} onPress={onPress}>
+      <Image source={avatar} style={styles.avatar} />
       <View style={styles.wrapperText}>
-        <Text style={styles.name}>Ameer Thalib</Text>
-        <Text style={styles.babKonsultasi}>Fiqih</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.babKonsultasi}>{topic}</Text>
       </View>
       <View style={styles.rate}>
         <IconStar />
@@ -18,7 +18,7 @@ const RatedUstadz = () => {
         <IconStar />
         <IconStar />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingBottom: 16,
+    alignItems: 'center',
   },
   avatar: {
     width: 50,
