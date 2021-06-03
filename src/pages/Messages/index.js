@@ -4,7 +4,7 @@ import {DummyUstadz1, DummyUstadz2, DummyUstadz3} from '../../assets';
 import {List} from '../../components';
 import {colors, fonts} from '../../utils';
 
-const Messages = () => {
+const Messages = ({navigation}) => {
   const [konsulUstadz] = useState([
     {
       id: 1,
@@ -41,6 +41,7 @@ const Messages = () => {
               name={ustadz.name}
               desc={ustadz.desc}
               readChat={ustadz.readChat}
+              onPress={() => navigation.navigate('Chatting')}
             />
           );
         })}
