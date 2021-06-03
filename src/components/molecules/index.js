@@ -6,6 +6,8 @@ import RatedUstadz from './RatedUstadz';
 import NewsItem from './NewsItem';
 import ListUstadz from './ListUstadz';
 import ListDoa from './ListDoa';
+import ChatItem from './ChatItem';
+import InputChat from './InputChat';
 
 export {
   Header,
@@ -16,4 +18,6 @@ export {
   NewsItem,
   ListUstadz,
   ListDoa,
+  ChatItem,
+  InputChat,
 };

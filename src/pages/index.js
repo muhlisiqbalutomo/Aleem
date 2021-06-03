@@ -7,6 +7,7 @@ import Ustadz from './Ustadz';
 import Messages from './Messages';
 import Doa from './Doa';
 import PilihUstadz from './PilihUstadz';
+import Chatting from './Chatting';
 
 export {
   Splash,
@@ -18,4 +19,5 @@ export {
   Messages,
   Doa,
   PilihUstadz,
+  Chatting,
 };
