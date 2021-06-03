@@ -4,10 +4,11 @@ import HomeProfile from './HomeProfile';
 import BabKonsultasi from './BabKonsultasi';
 import RatedUstadz from './RatedUstadz';
 import NewsItem from './NewsItem';
-import ListUstadz from './ListUstadz';
+import List from './List';
 import ListDoa from './ListDoa';
 import ChatItem from './ChatItem';
 import InputChat from './InputChat';
+import Profile from './Profile';
 
 export {
   Header,
@@ -16,8 +17,9 @@ export {
   BabKonsultasi,
   RatedUstadz,
   NewsItem,
-  ListUstadz,
+  List,
   ListDoa,
   ChatItem,
   InputChat,
+  Profile,
 };

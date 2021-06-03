@@ -8,6 +8,7 @@ import Messages from './Messages';
 import Doa from './Doa';
 import PilihUstadz from './PilihUstadz';
 import Chatting from './Chatting';
+import UserProfile from './UserProfile';
 
 export {
   Splash,
@@ -20,4 +21,5 @@ export {
   Doa,
   PilihUstadz,
   Chatting,
+  UserProfile,
 };

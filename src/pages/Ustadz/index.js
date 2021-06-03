@@ -13,7 +13,7 @@ const Ustadz = ({navigation}) => {
         <ScrollView showsVerticalScrollIndicator={false}>
           <Gap height={30} />
           <View style={styles.wrapperSection}>
-            <HomeProfile />
+            <HomeProfile onPress={() => navigation.navigate('UserProfile')} />
             <Text style={styles.welcome}>
               Assalamualaikum, {'\n'}konsultasi apa hari ini?
             </Text>

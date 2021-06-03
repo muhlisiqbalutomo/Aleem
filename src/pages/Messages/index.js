@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {DummyUstadz1, DummyUstadz2, DummyUstadz3} from '../../assets';
-import {ListUstadz} from '../../components';
+import {List} from '../../components';
 import {colors, fonts} from '../../utils';
 
 const Messages = () => {
@@ -35,7 +35,7 @@ const Messages = () => {
         <Text style={styles.title}>Messages</Text>
         {konsulUstadz.map(ustadz => {
           return (
-            <ListUstadz
+            <List
               key={ustadz.id}
               profile={ustadz.profile}
               name={ustadz.name}

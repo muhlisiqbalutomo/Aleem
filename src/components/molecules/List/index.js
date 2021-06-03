@@ -1,12 +1,33 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {IconNext} from '../../../assets';
+import {
+  IconEditProfile,
+  IconHelpCenter,
+  IconLanguage,
+  IconNext,
+  IconRateApp,
+} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-const ListUstadz = ({profile, name, desc, type, onPress, readChat}) => {
+const List = ({profile, name, desc, type, onPress, icon, readChat}) => {
+  const Icon = () => {
+    switch (icon) {
+      case 'edit-profile':
+        return <IconEditProfile />;
+      case 'language':
+        return <IconLanguage />;
+      case 'rate-app':
+        return <IconRateApp />;
+      case 'help-center':
+        return <IconHelpCenter />;
+
+      default:
+        break;
+    }
+  };
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image source={profile} style={styles.avatar} />
+      {icon ? <Icon /> : <Image source={profile} style={styles.avatar} />}
       <View style={styles.wrapperText}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.lastChat(readChat)}>{desc}</Text>
@@ -16,7 +37,7 @@ const ListUstadz = ({profile, name, desc, type, onPress, readChat}) => {
   );
 };
 
-export default ListUstadz;
+export default List;
 
 const styles = StyleSheet.create({
   container: {
@@ -31,10 +52,10 @@ const styles = StyleSheet.create({
     width: 46,
     height: 46,
     borderRadius: 46 / 2,
-    marginRight: 12,
   },
   wrapperText: {
     flex: 1,
+    marginLeft: 16,
   },
   name: {
     fontSize: 16,
