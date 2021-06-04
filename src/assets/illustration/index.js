@@ -13,6 +13,8 @@ import ILDoaToilet from './doa-toilet.png';
 import ILDoaWudhu from './doa-wudhu.png';
 import ILDOaRumah from './doa-rumah.png';
 import ILBGDoa from './bg-doa.png';
+import ILSunrise from './sunrise.png';
+import ILSunset from './sunset.png';
 
 export {
   ILLogo,
@@ -30,4 +32,6 @@ export {
   ILDoaWudhu,
   ILDOaRumah,
   ILBGDoa,
+  ILSunrise,
+  ILSunset,
 };

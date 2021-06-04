@@ -1,15 +1,10 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ILSunrise, ILSunset, JSONTopikKonsultasi} from '../../assets';
 import {Gap} from '../../components/atoms';
-import {BabKonsultasi, NewsItem, RatedUstadz} from '../../components/molecules';
+import {BabKonsultasi, ListDzikir} from '../../components/molecules';
 import HomeProfile from '../../components/molecules/HomeProfile';
 import {colors, fonts} from '../../utils';
-import {
-  DummyUstadz1,
-  DummyUstadz2,
-  DummyUstadz3,
-  JSONTopikKonsultasi,
-} from '../../assets';
 
 const Ustadz = ({navigation}) => {
   const bgKonsulColor = [
@@ -32,7 +27,7 @@ const Ustadz = ({navigation}) => {
           </View>
           <View style={styles.wrapperScroll}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              <View style={styles.konsultasi}>
+              <View style={styles.row}>
                 <Gap width={32} />
                 {JSONTopikKonsultasi.data.map(item => {
                   return (
@@ -48,32 +43,14 @@ const Ustadz = ({navigation}) => {
               </View>
             </ScrollView>
           </View>
-          <View style={styles.wrapperSection}>
-            <Text style={styles.sectionLabel}>Top Rated Ustadz</Text>
-            <RatedUstadz
-              name="Ameer Thalib"
-              topic="Fiqih"
-              avatar={DummyUstadz1}
-              onPress={() => navigation.navigate('UstadzProfile')}
-            />
-            <RatedUstadz
-              name="Fatih Rizal"
-              topic="Sejarah Islam"
-              avatar={DummyUstadz2}
-              onPress={() => navigation.navigate('UstadzProfile')}
-            />
-            <RatedUstadz
-              name="Zabit Bahar"
-              topic="Hadits"
-              avatar={DummyUstadz3}
-              onPress={() => navigation.navigate('UstadzProfile')}
-            />
-            <Text style={styles.sectionLabel}>Good News</Text>
+          <View style={styles.wrapperDzikir}>
+            <Text style={styles.sectionLabel}>Dzikir</Text>
+            <View style={styles.row}>
+              <ListDzikir title="Pagi" iconDzikir={ILSunrise} />
+              <Gap width={10} />
+              <ListDzikir title="Petang" iconDzikir={ILSunset} />
+            </View>
           </View>
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
-          <Gap height={30} />
         </ScrollView>
       </View>
     </View>
@@ -95,7 +72,7 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
-    fontFamily: fonts.primary[600],
+    fontFamily: fonts.primary[800],
     color: colors.text.primary,
     marginTop: 30,
     marginBottom: 16,
@@ -103,15 +80,19 @@ const styles = StyleSheet.create({
   wrapperScroll: {
     marginHorizontal: -16,
   },
-  konsultasi: {
+  row: {
     flexDirection: 'row',
   },
   wrapperSection: {
     paddingHorizontal: 16,
   },
+  wrapperDzikir: {
+    paddingHorizontal: 16,
+    alignItems: 'center',
+  },
   sectionLabel: {
-    fontSize: 16,
-    fontFamily: fonts.primary[600],
+    fontSize: 20,
+    fontFamily: fonts.primary[800],
     color: colors.text.primary,
     marginTop: 30,
     marginBottom: 16,

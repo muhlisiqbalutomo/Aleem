@@ -10,6 +10,7 @@ import PilihUstadz from './PilihUstadz';
 import Chatting from './Chatting';
 import UserProfile from './UserProfile';
 import DetailDoa from './DetailDoa';
+import Dzikir from './Dzikir';
 
 export {
   Splash,
@@ -24,4 +25,5 @@ export {
   Chatting,
   UserProfile,
   DetailDoa,
+  Dzikir,
 };

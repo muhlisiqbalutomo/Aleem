@@ -10,6 +10,7 @@ import ChatItem from './ChatItem';
 import InputChat from './InputChat';
 import Profile from './Profile';
 import ProfileItem from './ProfileItem';
+import ListDzikir from './ListDzikir';
 
 export {
   Header,
@@ -24,4 +25,5 @@ export {
   InputChat,
   Profile,
   ProfileItem,
+  ListDzikir,
 };

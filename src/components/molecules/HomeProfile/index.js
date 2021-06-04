@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 16,
-    fontFamily: fonts.primary[600],
+    fontFamily: fonts.primary[700],
     color: colors.text.primary,
   },
   profession: {
     fontSize: 12,
-    fontFamily: fonts.primary[400],
+    fontFamily: fonts.primary[600],
     color: colors.text.secondary,
   },
 });

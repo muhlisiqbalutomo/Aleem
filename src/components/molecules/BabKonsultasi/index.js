@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   label: {
-    fontSize: 14,
-    fontFamily: fonts.primary[800],
+    fontSize: 18,
+    fontFamily: fonts.primary[900],
     color: colors.white,
     textAlign: 'center',
     maxWidth: '60%',
