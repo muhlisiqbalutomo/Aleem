@@ -51,7 +51,7 @@ const Ustadz = ({navigation}) => {
                 iconDzikir={ILSunrise}
                 onPress={() => navigation.navigate('DzikirPagi')}
               />
-              <Gap width={10} />
+              <Gap width={20} />
               <ListDzikir
                 title="Petang"
                 iconDzikir={ILSunset}
