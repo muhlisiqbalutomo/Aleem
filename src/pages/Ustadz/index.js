@@ -1,6 +1,11 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {ILSunrise, ILSunset, JSONTopikKonsultasi} from '../../assets';
+import {
+  ILSunrise,
+  ILSunset,
+  JSONDzikir,
+  JSONTopikKonsultasi,
+} from '../../assets';
 import {Gap} from '../../components/atoms';
 import {BabKonsultasi, ListDzikir} from '../../components/molecules';
 import HomeProfile from '../../components/molecules/HomeProfile';
@@ -46,9 +51,17 @@ const Ustadz = ({navigation}) => {
           <View style={styles.wrapperDzikir}>
             <Text style={styles.sectionLabel}>Dzikir</Text>
             <View style={styles.row}>
-              <ListDzikir title="Pagi" iconDzikir={ILSunrise} />
+              <ListDzikir
+                title="Pagi"
+                iconDzikir={ILSunrise}
+                onPress={() => navigation.navigate('DzikirPagi')}
+              />
               <Gap width={10} />
-              <ListDzikir title="Petang" iconDzikir={ILSunset} />
+              <ListDzikir
+                title="Petang"
+                iconDzikir={ILSunset}
+                onPress={() => navigation.navigate('DzikirPetang')}
+              />
             </View>
           </View>
         </ScrollView>

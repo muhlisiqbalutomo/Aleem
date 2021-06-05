@@ -3,9 +3,9 @@ import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {colors, fonts} from '../../../utils';
 import {Gap} from '../../atoms';
 
-const ListDzikir = ({title, iconDzikir}) => {
+const ListDzikir = ({title, iconDzikir, onPress}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={iconDzikir} style={styles.icon} />
       <Gap height={30} />
       <Text style={styles.text}>{title}</Text>
