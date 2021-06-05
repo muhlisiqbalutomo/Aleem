@@ -1,11 +1,6 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {
-  ILSunrise,
-  ILSunset,
-  JSONDzikir,
-  JSONTopikKonsultasi,
-} from '../../assets';
+import {ILSunrise, ILSunset, JSONTopikKonsultasi} from '../../assets';
 import {Gap} from '../../components/atoms';
 import {BabKonsultasi, ListDzikir} from '../../components/molecules';
 import HomeProfile from '../../components/molecules/HomeProfile';

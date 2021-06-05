@@ -41,9 +41,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: active => ({
-    fontSize: 10,
+    fontSize: 12,
     color: active ? colors.text.menuActive : colors.text.menuInactive,
-    fontFamily: fonts.primary[600],
+    fontFamily: fonts.primary[800],
     marginTop: 4,
   }),
 });
