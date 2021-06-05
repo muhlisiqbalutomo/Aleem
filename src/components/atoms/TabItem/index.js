@@ -6,17 +6,18 @@ import {
   IconDoa,
   IconDoaActive,
   IconUstadz,
-  IconUstadzActive,
+  IconHomeActive,
+  IconHome,
 } from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
 const TabItem = ({title, active, onPress, onLongPress}) => {
   const Icon = () => {
-    if (title === 'Ustadz') {
-      return active ? <IconUstadzActive /> : <IconUstadz />;
-    }
     if (title === 'Messages') {
       return active ? <IconMessagesActive /> : <IconMessages />;
+    }
+    if (title === 'Home') {
+      return active ? <IconHomeActive /> : <IconHome />;
     }
     if (title === "Do'a Harian") {
       return active ? <IconDoaActive /> : <IconDoa />;

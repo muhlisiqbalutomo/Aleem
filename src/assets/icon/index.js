@@ -16,6 +16,8 @@ import IconEditProfile from './edit-profile.svg';
 import IconLanguage from './language.svg';
 import IconRateApp from './rate-app.svg';
 import IconHelpCenter from './help-center.svg';
+import IconHome from './home.svg';
+import IconHomeActive from './home-active.svg';
 
 export {
   IconBackDark,
@@ -36,4 +38,6 @@ export {
   IconLanguage,
   IconRateApp,
   IconHelpCenter,
+  IconHome,
+  IconHomeActive,
 };

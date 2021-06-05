@@ -26,9 +26,11 @@ const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
   return (
-    <Tab.Navigator tabBar={props => <ButtonNavigator {...props} />}>
-      <Tab.Screen name="Ustadz" component={Ustadz} />
+    <Tab.Navigator
+      tabBar={props => <ButtonNavigator {...props} />}
+      initialRouteName={'Ustadz'}>
       <Tab.Screen name="Messages" component={Messages} />
+      <Tab.Screen name="Home" component={Ustadz} />
       <Tab.Screen name="Do'a Harian" component={Doa} />
     </Tab.Navigator>
   );
