@@ -25,6 +25,7 @@ const Register = ({navigation}) => {
         // var user = userCredential.user;
         // console.log('user Credential: ', user);
         setLoading(false);
+        setForm('reset');
         console.log('register success: ', success);
       })
       .catch(error => {
