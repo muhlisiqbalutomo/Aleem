@@ -3,6 +3,7 @@ import {StyleSheet, View, ScrollView} from 'react-native';
 import {Button, Gap, Header, Input, Loading} from '../../components';
 import {Fire} from '../../config';
 import {colors, useForm} from '../../utils';
+import {showMessage, hideMessage} from 'react-native-flash-message';
 
 const Register = ({navigation}) => {
   // hooks
@@ -33,7 +34,13 @@ const Register = ({navigation}) => {
         const errorMessage = error.message;
         setLoading(false);
         console.log('error code: ', errorCode);
-        console.log('error message: ', errorMessage);
+        showMessage({
+          message: errorMessage,
+          type: 'default',
+          backgroundColor: colors.error,
+          color: colors.white,
+        });
+        console.log('error: ', error);
       });
     // () => navigation.navigate('UploadPhoto')
   };

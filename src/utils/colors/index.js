@@ -15,6 +15,8 @@ const mainColors = {
   // loading
   black1: '#000000',
   black2: 'rgba(0, 0, 0, 0.5)',
+  // alert
+  red: '#E06379',
 };
 
 export const colors = {
@@ -50,4 +52,5 @@ export const colors = {
   },
   border: mainColors.gray2,
   loadingBackground: mainColors.black2,
+  error: mainColors.red,
 };
