@@ -12,6 +12,9 @@ const mainColors = {
   hadits: '#F1C40F',
   fiqih: '#3498DB',
   sejarahIslam: '#E74C3C',
+  // loading
+  black1: '#000000',
+  black2: 'rgba(0, 0, 0, 0.5)',
 };
 
 export const colors = {
@@ -46,4 +49,5 @@ export const colors = {
     },
   },
   border: mainColors.gray2,
+  loadingBackground: mainColors.black2,
 };

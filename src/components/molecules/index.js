@@ -11,6 +11,7 @@ import InputChat from './InputChat';
 import Profile from './Profile';
 import ProfileItem from './ProfileItem';
 import ListDzikir from './ListDzikir';
+import Loading from './Loading';
 
 export {
   Header,
@@ -26,4 +27,5 @@ export {
   Profile,
   ProfileItem,
   ListDzikir,
+  Loading,
 };
