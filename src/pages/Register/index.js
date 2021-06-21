@@ -22,11 +22,20 @@ const Register = ({navigation}) => {
     Fire.auth()
       .createUserWithEmailAndPassword(form.email, form.password)
       .then(success => {
-        // Signed in
-        // var user = userCredential.user;
-        // console.log('user Credential: ', user);
         setLoading(false);
         setForm('reset');
+
+        const data = {
+          fullName: form.fullName,
+          profession: form.profession,
+          email: form.email,
+        };
+
+        // https://firebase.com/users/i123awde123cdc
+        Fire.database()
+          .ref('users/' + success.user.uid + '/')
+          .set(data);
+
         console.log('register success: ', success);
       })
       .catch(error => {
