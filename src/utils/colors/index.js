@@ -5,6 +5,7 @@ const mainColors = {
   gray: '#7D8797',
   gray2: '#E9E9E9',
   gray3: '#EDEEF0',
+  gray4: '#B1B7C2',
   bottom: '#112340',
   // color bab konsultasi
   akidah: '#1ABC9C',
@@ -48,6 +49,10 @@ export const colors = {
     secondary: {
       background: 'white',
       text: 'black',
+    },
+    disable: {
+      background: mainColors.gray3,
+      text: mainColors.gray4,
     },
   },
   border: mainColors.gray2,
