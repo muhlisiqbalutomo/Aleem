@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import {Button, Gap, Header, Input, Loading} from '../../components';
 import {Fire} from '../../config';
-import {colors, useForm} from '../../utils';
-import {showMessage, hideMessage} from 'react-native-flash-message';
+import {colors, getData, storeData, useForm} from '../../utils';
+import {showMessage} from 'react-native-flash-message';
 
 const Register = ({navigation}) => {
   // hooks
@@ -18,6 +18,7 @@ const Register = ({navigation}) => {
 
   const onContinue = () => {
     console.log(form);
+
     setLoading(true);
     Fire.auth()
       .createUserWithEmailAndPassword(form.email, form.password)
@@ -36,6 +37,10 @@ const Register = ({navigation}) => {
           .ref('users/' + success.user.uid + '/')
           .set(data);
 
+        storeData('user', data);
+
+        navigation.navigate('UploadPhoto');
+
         console.log('register success: ', success);
       })
       .catch(error => {
@@ -51,7 +56,6 @@ const Register = ({navigation}) => {
         });
         console.log('error: ', error);
       });
-    // () => navigation.navigate('UploadPhoto')
   };
   return (
     <>
