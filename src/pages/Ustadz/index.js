@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {ILSunrise, ILSunset, JSONTopikKonsultasi} from '../../assets';
 import {Gap} from '../../components/atoms';
 import {BabKonsultasi, ListDzikir} from '../../components/molecules';
 import HomeProfile from '../../components/molecules/HomeProfile';
-import {colors, fonts} from '../../utils';
+import {colors, fonts, getData} from '../../utils';
 
 const Ustadz = ({navigation}) => {
   const bgKonsulColor = [
@@ -14,6 +14,11 @@ const Ustadz = ({navigation}) => {
     colors.fiqih,
     colors.sejarahIslam,
   ];
+  useEffect(() => {
+    getData('user').then(res => {
+      console.log('data user: ', res);
+    });
+  }, []);
   return (
     <View style={styles.page}>
       <View style={styles.content}>
