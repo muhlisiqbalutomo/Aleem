@@ -30,6 +30,7 @@ const Register = ({navigation}) => {
           fullName: form.fullName,
           profession: form.profession,
           email: form.email,
+          uid: success.user.uid,
         };
 
         // https://firebase.com/users/i123awde123cdc
