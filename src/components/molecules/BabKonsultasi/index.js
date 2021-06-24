@@ -12,19 +12,19 @@ import {colors, fonts} from '../../../utils';
 const BabKonsultasi = ({topic, color, onPress}) => {
   const Icon = () => {
     switch (topic) {
-      case 'AKIDAH':
+      case 'Aqidah':
         return <ILBabAkidah style={styles.illustration} />;
 
-      case 'TAFSIR':
+      case 'Tafsir':
         return <ILBabTafsir style={styles.illustration} />;
 
-      case 'HADITS':
+      case 'Hadits':
         return <ILBabHadits style={styles.illustration} />;
 
-      case 'FIQIH':
+      case 'Fiqih':
         return <ILBabFiqih style={styles.illustration} />;
 
-      case 'SEJARAH ISLAM':
+      case 'Sejarah Islam':
         return <ILBabSejarahIslam style={styles.illustration} />;
 
       default:

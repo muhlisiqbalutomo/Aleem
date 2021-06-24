@@ -1,10 +1,11 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {ILSunrise, ILSunset, JSONTopikKonsultasi} from '../../assets';
+import {ILSunrise, ILSunset} from '../../assets';
 import {Gap} from '../../components/atoms';
 import {BabKonsultasi, ListDzikir} from '../../components/molecules';
 import HomeProfile from '../../components/molecules/HomeProfile';
-import {colors, fonts, getData} from '../../utils';
+import {Fire} from '../../config';
+import {colors, fonts, getData, showError} from '../../utils';
 
 const Ustadz = ({navigation}) => {
   const bgKonsulColor = [
@@ -14,11 +15,25 @@ const Ustadz = ({navigation}) => {
     colors.fiqih,
     colors.sejarahIslam,
   ];
+  const [consultingCategory, setConsultingCategory] = useState([]);
+
   useEffect(() => {
     getData('user').then(res => {
       ///
     });
   }, []);
+  Fire.database()
+    .ref('consulting_category/')
+    .once('value')
+    .then(res => {
+      console.log('data category consultation: ', res.val());
+      if (res.val()) {
+        setConsultingCategory(res.val());
+      }
+    })
+    .catch(err => {
+      showError(err.messsage);
+    });
   return (
     <View style={styles.page}>
       <View style={styles.content}>
@@ -34,11 +49,11 @@ const Ustadz = ({navigation}) => {
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View style={styles.row}>
                 <Gap width={32} />
-                {JSONTopikKonsultasi.data.map(item => {
+                {consultingCategory.map(item => {
                   return (
                     <BabKonsultasi
                       key={item.id}
-                      topic={item.topic}
+                      topic={item.category}
                       color={bgKonsulColor[item.id + -1]} //nice improve
                       onPress={() => navigation.navigate('PilihUstadz')}
                     />
