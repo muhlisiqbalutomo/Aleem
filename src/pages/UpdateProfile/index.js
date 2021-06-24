@@ -27,9 +27,6 @@ const UpdateProfile = ({navigation}) => {
   }, []);
 
   const update = () => {
-    console.log('profile: ', profile);
-    console.log('new password: ', password);
-
     if (password.length > 0) {
       if (password.length < 6) {
         showMessage({
@@ -72,7 +69,6 @@ const UpdateProfile = ({navigation}) => {
       .ref(`users/${profile.uid}/`)
       .update(data)
       .then(() => {
-        console.log('success: ', data);
         storeData('user', data);
       })
       .catch(err => {
@@ -96,7 +92,6 @@ const UpdateProfile = ({navigation}) => {
     launchImageLibrary(
       {quality: 0.5, maxWidth: 200, maxHeight: 200, includeBase64: true},
       response => {
-        console.log('response: ', response);
         if (response.didCancel || response.error) {
           showMessage({
             message: 'oops, sepertinya anda tidak memilih fotonya?',
@@ -105,7 +100,6 @@ const UpdateProfile = ({navigation}) => {
             color: colors.white,
           });
         } else {
-          console.log('response getImage: ', response);
           setPhotoForDB(
             `data:${response.assets[0].type};base64, ${response.assets[0].base64}`,
           );

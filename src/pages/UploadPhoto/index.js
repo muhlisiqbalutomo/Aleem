@@ -17,7 +17,6 @@ const UploadPhoto = ({navigation, route}) => {
     launchImageLibrary(
       {quality: 0.5, maxWidth: 200, maxHeight: 200, includeBase64: true},
       response => {
-        console.log('response: ', response);
         if (response.didCancel || response.error) {
           showMessage({
             message: 'oops, sepertinya anda tidak memilih fotonya?',
@@ -26,7 +25,6 @@ const UploadPhoto = ({navigation, route}) => {
             color: colors.white,
           });
         } else {
-          console.log('response getImage: ', response);
           setPhotoForDB(
             `data:${response.assets[0].type};base64, ${response.assets[0].base64}`,
           );

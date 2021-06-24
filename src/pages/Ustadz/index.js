@@ -16,7 +16,7 @@ const Ustadz = ({navigation}) => {
   ];
   useEffect(() => {
     getData('user').then(res => {
-      console.log('data user: ', res);
+      ///
     });
   }, []);
   return (

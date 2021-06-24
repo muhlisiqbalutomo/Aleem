@@ -15,6 +15,6 @@ export const getData = async key => {
       return JSON.parse(value);
     }
   } catch (e) {
-    // console.log(e);
+    ///
   }
 };

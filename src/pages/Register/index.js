@@ -17,8 +17,6 @@ const Register = ({navigation}) => {
   const [loading, setLoading] = useState(false);
 
   const onContinue = () => {
-    console.log(form);
-
     setLoading(true);
     Fire.auth()
       .createUserWithEmailAndPassword(form.email, form.password)
@@ -40,20 +38,20 @@ const Register = ({navigation}) => {
 
         storeData('user', data);
         navigation.navigate('UploadPhoto', data);
-        console.log('register success: ', success);
+        'register success: ', success;
       })
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setLoading(false);
-        console.log('error code: ', errorCode);
+        'error code: ', errorCode;
         showMessage({
           message: errorMessage,
           type: 'default',
           backgroundColor: colors.error,
           color: colors.white,
         });
-        console.log('error: ', error);
+        'error: ', error;
       });
   };
   return (

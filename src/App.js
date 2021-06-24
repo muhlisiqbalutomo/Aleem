@@ -11,7 +11,6 @@ const MainApp = () => {
   // const [loading, setLoading] = useState(false);
   // state global
   const stateGlobal = useSelector(state => state);
-  console.log('stateGlobal: ', stateGlobal);
   return (
     <>
       <NavigationContainer>
