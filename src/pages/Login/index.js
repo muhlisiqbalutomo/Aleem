@@ -1,10 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import {ILLogoGetStarted} from '../../assets';
-import {Button, Gap, Input, Link, Loading} from '../../components';
-import {colors, fonts, storeData, useForm} from '../../utils';
+import {Button, Gap, Input, Link} from '../../components';
+import {colors, fonts, showError, storeData, useForm} from '../../utils';
 import {Fire} from '../../config';
-import {showMessage} from 'react-native-flash-message';
 import {useDispatch} from 'react-redux';
 
 const Login = ({navigation}) => {
@@ -12,18 +11,15 @@ const Login = ({navigation}) => {
   const dispatch = useDispatch(); //fungsi merubah reducer yaitu action.value
 
   const login = () => {
-    console.log('form: ', form);
     dispatch({type: 'SET_LOADING', value: true});
     Fire.auth()
       .signInWithEmailAndPassword(form.email, form.password)
       .then(res => {
-        console.log('success: ', res);
         dispatch({type: 'SET_LOADING', value: false});
         Fire.database()
           .ref(`users/${res.user.uid}/`)
           .once('value')
           .then(resDB => {
-            console.log('data user: ', resDB.val());
             if (resDB.val()) {
               storeData('user', resDB.val());
               navigation.replace('MainApp');
@@ -31,14 +27,8 @@ const Login = ({navigation}) => {
           });
       })
       .catch(err => {
-        console.log('error: ', err);
         dispatch({type: 'SET_LOADING', value: false});
-        showMessage({
-          message: err.message,
-          type: 'default',
-          backgroundColor: colors.error,
-          color: colors.white,
-        });
+        showError(err.message);
       });
   };
 
