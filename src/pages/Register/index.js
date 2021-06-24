@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import {Button, Gap, Header, Input, Loading} from '../../components';
 import {Fire} from '../../config';
-import {colors, getData, storeData, useForm} from '../../utils';
-import {showMessage} from 'react-native-flash-message';
+import {colors, showError, storeData, useForm} from '../../utils';
 
 const Register = ({navigation}) => {
   // hooks
@@ -38,20 +37,11 @@ const Register = ({navigation}) => {
 
         storeData('user', data);
         navigation.navigate('UploadPhoto', data);
-        'register success: ', success;
       })
       .catch(error => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         setLoading(false);
-        'error code: ', errorCode;
-        showMessage({
-          message: errorMessage,
-          type: 'default',
-          backgroundColor: colors.error,
-          color: colors.white,
-        });
-        'error: ', error;
+        showError(errorMessage);
       });
   };
   return (
