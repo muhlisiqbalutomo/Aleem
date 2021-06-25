@@ -33,7 +33,6 @@ export default Profile;
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingBottom: 30,
   },
   borderProfile: {
     borderWidth: 0.2,

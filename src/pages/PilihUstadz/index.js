@@ -52,7 +52,7 @@ const PilihUstadz = ({navigation, route}) => {
             profile={{uri: ustadz.data.photo}}
             name={ustadz.data.fullName}
             desc={ustadz.data.university}
-            onPress={() => navigation.navigate('Chatting')}
+            onPress={() => navigation.navigate('UstadzProfile', ustadz)}
           />
         );
       })}
