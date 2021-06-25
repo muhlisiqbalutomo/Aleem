@@ -1,58 +1,40 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {DummyUstadz1, DummyUstadz2, DummyUstadz3} from '../../assets';
 import {List} from '../../components';
 import {colors, fonts, getData} from '../../utils';
 import {Fire} from '../../config';
 
 const Messages = ({navigation}) => {
-  const [ustadz] = useState([
-    {
-      id: 1,
-      profile: DummyUstadz2,
-      name: 'Ameer Thalib',
-      desc: 'Oke menurut pak dokter bagaimana unt...',
-      readChat: false,
-    },
-    {
-      id: 2,
-      profile: DummyUstadz1,
-      name: 'Fatih Rizal',
-      desc: 'Oh tentu saja tidak karena perilaku it...',
-      // property dibawah tambahan, just improve;)
-      readChat: true,
-    },
-    {
-      id: 3,
-      profile: DummyUstadz3,
-      name: 'Zabit Bahar',
-      desc: 'Baik pak ustadz, terima kasih banyak atas wakt...',
-      readChat: false,
-    },
-  ]);
-
   const [user, setUser] = useState({});
   const [historyChat, setHistoryChat] = useState([]);
 
   useEffect(() => {
     getDataUserFromLocal();
+    const rootDB = Fire.database().ref();
     const urlHistory = `messages/${user.uid}/`;
-    Fire.database()
-      .ref(urlHistory)
-      .on('value', snapshot => {
-        if (snapshot.val()) {
-          const oldData = snapshot.val();
-          const data = [];
-          Object.keys(oldData).map(key => {
-            data.push({
-              id: key,
-              ...oldData[key], // tanpa menggunakan objek data
-            });
+    const messageDB = rootDB.child(urlHistory);
+
+    messageDB.on('value', async snapshot => {
+      if (snapshot.val()) {
+        const oldData = snapshot.val();
+        const data = [];
+
+        const promises = await Object.keys(oldData).map(async key => {
+          const urlUidUstadz = `ustadz/${oldData[key].uidPartner}`;
+          const detailUstadz = await rootDB.child(urlUidUstadz).once('value');
+          console.log('detail ustadz: ', detailUstadz.val());
+          data.push({
+            id: key,
+            detailUstadz: detailUstadz.val(),
+            ...oldData[key], // tanpa menggunakan objek data
           });
-          console.log('new data history: ', data);
-          setHistoryChat(data);
-        }
-      });
+        });
+
+        await Promise.all(promises);
+        console.log('new data history: ', data);
+        setHistoryChat(data);
+      }
+    });
   }, [user.uid]);
 
   const getDataUserFromLocal = () => {
@@ -69,8 +51,8 @@ const Messages = ({navigation}) => {
           return (
             <List
               key={chat.id}
-              profile={chat.uidPartner}
-              name={chat.uidPartner}
+              profile={{uri: chat.detailUstadz.photo}}
+              name={chat.detailUstadz.fullName}
               desc={chat.lastContentChat}
               onPress={() => navigation.navigate('Chatting')}
             />

@@ -76,12 +76,12 @@ const Chatting = ({navigation, route}) => {
     const dataHistoryChatForUser = {
       lastContentChat: chatContent,
       lastChatDate: today.getTime(),
-      uidPartner: user.uid,
+      uidPartner: dataUstadz.data.uid,
     };
     const dataHistoryChatForUstadz = {
       lastContentChat: chatContent,
       lastChatDate: today.getTime(),
-      uidPartner: dataUstadz.data.uid,
+      uidPartner: user.uid,
     };
 
     // kirim ke firebase
