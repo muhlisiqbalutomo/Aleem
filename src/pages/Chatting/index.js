@@ -21,6 +21,7 @@ const Chatting = ({navigation, route}) => {
     getDataUserFromLocal();
     const chatID = `${user.uid}_${dataUstadz.data.uid}`;
     const urlFirebase = `chatting/${chatID}/allChat/`;
+
     Fire.database()
       .ref(urlFirebase)
       .on('value', snapshot => {
@@ -28,6 +29,7 @@ const Chatting = ({navigation, route}) => {
         if (snapshot.val()) {
           const dataSnapshot = snapshot.val();
           const allDataChat = [];
+
           Object.keys(dataSnapshot).map(key => {
             const dataChat = dataSnapshot[key];
             const newDataChat = [];
@@ -69,7 +71,18 @@ const Chatting = ({navigation, route}) => {
     const chatID = `${user.uid}_${dataUstadz.data.uid}`;
 
     const urlFirebase = `chatting/${chatID}/allChat/${setDateChat(today)}`;
-    // console.log('url firebase: ', urlFirebase);
+    const urlMessageUser = `messages/${user.uid}/${chatID}`;
+    const urlMessageUstadz = `messages/${dataUstadz.data.uid}/${chatID}`;
+    const dataHistoryChatForUser = {
+      lastContentChat: chatContent,
+      lastChatDate: today.getTime(),
+      uidPartner: user.uid,
+    };
+    const dataHistoryChatForUstadz = {
+      lastContentChat: chatContent,
+      lastChatDate: today.getTime(),
+      uidPartner: dataUstadz.data.uid,
+    };
 
     // kirim ke firebase
     Fire.database()
@@ -77,6 +90,10 @@ const Chatting = ({navigation, route}) => {
       .push(data)
       .then(() => {
         setChatContent('');
+        // set history for user
+        Fire.database().ref(urlMessageUser).set(dataHistoryChatForUser);
+        // set history for ustadz
+        Fire.database().ref(urlMessageUstadz).set(dataHistoryChatForUstadz);
       })
       .catch(err => {
         showError(err.message);
