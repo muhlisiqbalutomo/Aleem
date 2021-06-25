@@ -36,8 +36,9 @@ const styles = StyleSheet.create({
   title: type => ({
     textAlign: 'center',
     flex: 1,
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: fonts.primary[600],
     color: type === 'dark' ? colors.white : colors.text.primary,
+    textTransform: 'capitalize',
   }),
 });

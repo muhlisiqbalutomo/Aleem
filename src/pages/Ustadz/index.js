@@ -26,7 +26,6 @@ const Ustadz = ({navigation}) => {
     .ref('consulting_category/')
     .once('value')
     .then(res => {
-      console.log('data category consultation: ', res.val());
       if (res.val()) {
         setConsultingCategory(res.val());
       }
@@ -55,7 +54,7 @@ const Ustadz = ({navigation}) => {
                       key={item.id}
                       topic={item.category}
                       color={bgKonsulColor[item.id + -1]} //nice improve
-                      onPress={() => navigation.navigate('PilihUstadz')}
+                      onPress={() => navigation.navigate('PilihUstadz', item)}
                     />
                   );
                 })}

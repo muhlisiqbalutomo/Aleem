@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
   },
   name: {
-    fontSize: 16,
+    fontSize: 15,
     fontFamily: fonts.primary[600],
     color: colors.text.primary,
   },
@@ -66,5 +66,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: readChat ? fonts.primary[700] : fonts.primary.normal,
     color: readChat ? colors.text.primary : colors.text.secondary,
+    textTransform: 'capitalize',
   }),
 });
