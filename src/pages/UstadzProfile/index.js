@@ -26,7 +26,7 @@ const UstadzProfile = ({navigation, route}) => {
       <View style={styles.btn}>
         <Button
           title="Start Consultation"
-          onPress={() => navigation.navigate('Chatting')}
+          onPress={() => navigation.navigate('Chatting', dataUstadz)}
         />
       </View>
     </View>

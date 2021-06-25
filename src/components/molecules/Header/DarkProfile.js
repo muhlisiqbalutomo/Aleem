@@ -4,15 +4,15 @@ import {DummyUstadz2} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 import {Button} from '../../atoms';
 
-const DarkProfile = ({onPress}) => {
+const DarkProfile = ({onPress, title, desc, photo}) => {
   return (
     <View style={styles.container}>
       <Button type="icon-only" icon="back-light" onPress={onPress} />
       <View style={styles.wrapperText}>
-        <Text style={styles.name}>Abdul Thalib</Text>
-        <Text style={styles.desc}>Bab Tafsir</Text>
+        <Text style={styles.name}>{title}</Text>
+        <Text style={styles.desc}>{desc}</Text>
       </View>
-      <Image source={DummyUstadz2} style={styles.avatar} />
+      <Image source={photo} style={styles.avatar} />
     </View>
   );
 };
@@ -48,5 +48,6 @@ const styles = StyleSheet.create({
   avatar: {
     width: 46,
     height: 46,
+    borderRadius: 46 / 2,
   },
 });

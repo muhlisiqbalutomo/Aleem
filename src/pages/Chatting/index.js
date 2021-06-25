@@ -1,23 +1,32 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import {ChatItem, Header, InputChat} from '../../components';
 import {colors, fonts} from '../../utils';
 
-const Chatting = ({navigation}) => {
+const Chatting = ({navigation, route}) => {
+  const dataUstadz = route.params;
   return (
     <View style={styles.page}>
       <Header
         type="dark-profile"
-        title="Abdul Thalib"
+        desc={dataUstadz.data.category}
+        title={dataUstadz.data.fullName}
         onPress={() => navigation.goBack()}
+        photo={{uri: dataUstadz.data.photo}}
       />
       <View style={styles.content}>
-        <Text style={styles.chatDate}>Kamis, 3 Juni, 2021</Text>
-        <ChatItem isMe />
-        <ChatItem />
-        <ChatItem isMe />
+        <ScrollView>
+          <Text style={styles.chatDate}>Kamis, 3 Juni, 2021</Text>
+          <ChatItem isMe />
+          <ChatItem />
+          <ChatItem isMe />
+        </ScrollView>
       </View>
-      <InputChat />
+      <InputChat
+        value={'1'}
+        onChangeText={() => alert('input tap')}
+        onButtonPress={() => alert('Button Press')}
+      />
     </View>
   );
 };
