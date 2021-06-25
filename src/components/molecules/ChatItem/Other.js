@@ -3,17 +3,15 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import {DummyUser} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-const Other = () => {
+const Other = ({text, date, photo}) => {
   return (
     <View style={styles.container}>
-      <Image source={DummyUser} style={styles.avatar} />
+      <Image source={photo} style={styles.avatar} />
       <View>
         <View style={styles.chatContent}>
-          <Text style={styles.text}>
-            Pak ustadz, boleh minta menjelasan tafsir surah An-Nisa ayat 30?
-          </Text>
+          <Text style={styles.text}>{text}</Text>
         </View>
-        <Text style={styles.date}>4:20 AM</Text>
+        <Text style={styles.date}>{date}</Text>
       </View>
     </View>
   );
