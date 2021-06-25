@@ -1,10 +1,49 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import {ChatItem, Header, InputChat} from '../../components';
-import {colors, fonts} from '../../utils';
+import {colors, fonts, getData, showError} from '../../utils';
+import {Fire} from '../../config';
 
 const Chatting = ({navigation, route}) => {
   const dataUstadz = route.params;
+  const [chatContent, setChatContent] = useState('');
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    getData('user').then(res => {
+      console.log('user login: ', res);
+      setUser(res);
+    });
+  }, []);
+
+  const chatSend = () => {
+    const today = new Date();
+    const hour = today.getHours();
+    const minutes = today.getMinutes();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const date = today.getDate();
+    const data = {
+      sendBy: user.uid,
+      chatDate: new Date().getTime(),
+      chatTime: `${hour}:${minutes} ${hour > 12 ? 'PM' : 'AM'}`,
+      chatContent: chatContent,
+    };
+    console.log('data untuk di kirim: ', data);
+    // kirim ke firebase
+    Fire.database()
+      .ref(
+        `chatting/${user.uid}_${dataUstadz.data.uid}/allChat/${year}-${month}-${date}`,
+      )
+      .push(data)
+      .then(res => {
+        setChatContent('');
+      })
+      .catch(err => {
+        showError(err.message);
+      });
+  };
+
   return (
     <View style={styles.page}>
       <Header
@@ -23,9 +62,9 @@ const Chatting = ({navigation, route}) => {
         </ScrollView>
       </View>
       <InputChat
-        value={'1'}
-        onChangeText={() => alert('input tap')}
-        onButtonPress={() => alert('Button Press')}
+        value={chatContent}
+        onChangeText={value => setChatContent(value)}
+        onButtonPress={chatSend}
       />
     </View>
   );
